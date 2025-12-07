@@ -25,6 +25,7 @@ function LoginPage() {
             })
             console.log(res)
             if (res.data.success){
+                console.log(res.data)
                 dispatch(Login(res.data.data))
                 
                 navigate("/")
@@ -35,6 +36,7 @@ function LoginPage() {
         } catch (error) {
             toast.error("server error")
             console.log("here")
+            console.log(error)
             setError(error.message)
             return navigate("/server-error")
         }
